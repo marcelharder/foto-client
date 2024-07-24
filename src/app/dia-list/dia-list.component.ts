@@ -1,10 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CarouselModule} from 'ngx-bootstrap/carousel';
 
 @Component({
   selector: 'app-dia-list',
   standalone: true,
-  imports: [],
+  imports: [CarouselModule.forRoot()],
   templateUrl: './dia-list.component.html',
   styleUrl: './dia-list.component.css'
 })
@@ -14,8 +15,9 @@ export class DiaListComponent implements OnInit {
   
   ngOnInit(): void {
     this.testId = this.activatedRoute.snapshot.params['id'];
-    debugger;
-    // bv. get all the dias from category 5
+    
+    // bv. get all the dias from category 5 and show them in the viewer
+
   }
 
 }
