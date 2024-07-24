@@ -5,7 +5,7 @@ import { CarouselModule} from 'ngx-bootstrap/carousel';
 @Component({
   selector: 'app-dia-list',
   standalone: true,
-  imports: [CarouselModule.forRoot()],
+  imports: [CarouselModule],
   templateUrl: './dia-list.component.html',
   styleUrl: './dia-list.component.css'
 })
