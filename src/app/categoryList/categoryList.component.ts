@@ -4,6 +4,7 @@ import { categoryModel } from '../_models/categoryModel';
 import { CategoryDetailsComponent } from '../categoryDetails/categoryDetails.component';
 import { NgFor } from '@angular/common';
 import { AccountService } from '../_services/account.service';
+import { ImageService } from '../_services/image.service';
 
 @Component({
     selector: 'app-categoryList',
@@ -13,12 +14,18 @@ import { AccountService } from '../_services/account.service';
     imports: [CategoryDetailsComponent,NgFor]
 })
 export class CategoryListComponent implements OnInit{
-  accountService = inject(AccountService);
+  // accountService = inject(AccountService);
+  imageService = inject(ImageService);
   SeriesArray: Array<categoryModel> | null = [];
 
   ngOnInit(){
-   // get the array from the account service signal
-   this.SeriesArray = this.accountService.CatArray();
+  /*  // get the array from the account service signal
+   this.imageService.getCategories().subscribe((next)=>{
+    this.SeriesArray = next;
+   }); */
+
+   // get the categories from the resolver
+   
 
 
   }

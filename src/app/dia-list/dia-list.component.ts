@@ -11,12 +11,14 @@ import { CarouselModule} from 'ngx-bootstrap/carousel';
 })
 export class DiaListComponent implements OnInit {
   private activatedRoute = inject(ActivatedRoute);
-  private testId = 0;
+  testId = 0;
   
   ngOnInit(): void {
     this.testId = this.activatedRoute.snapshot.params['id'];
     
     // bv. get all the dias from category 5 and show them in the viewer
+
+    
 
   }
 
