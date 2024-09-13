@@ -15,10 +15,8 @@ export class DiaListComponent implements OnInit {
   
  ngOnInit(): void {
    this.route.data.subscribe({
-    next: data => {this.listOfFotos = data['lof']}
+    next: data => {this.listOfFotos = data['lof'].Value}
    })
-
-
   }
 
 }
