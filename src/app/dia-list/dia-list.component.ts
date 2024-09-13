@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { slideModel } from '../_models/slideModel';
 
 @Component({
   selector: 'app-dia-list',
@@ -9,13 +10,14 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './dia-list.component.css'
 })
 export class DiaListComponent implements OnInit {
-  private activatedRoute = inject(ActivatedRoute);
-  private testId = 0;
+ listOfFotos:slideModel[] = [];
+ private route = inject(ActivatedRoute);
   
-  ngOnInit(): void {
-    this.testId = this.activatedRoute.snapshot.params['id'];
-    
-    // bv. get all the dias from category 5 and show them in the viewer
+ ngOnInit(): void {
+   this.route.data.subscribe({
+    next: data => {this.listOfFotos = data['lof']}
+   })
+
 
   }
 

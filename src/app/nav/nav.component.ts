@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AccountService } from '../_services/account.service';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -15,6 +15,7 @@ export class NavComponent implements OnInit {
   accountService = inject(AccountService);
   model: any = {};
   currentUserName? = "";
+  router = inject(Router);
 
   ngOnInit(): void {
 
@@ -37,6 +38,7 @@ export class NavComponent implements OnInit {
 
   logout() {
     this.accountService.logout();
+    this.router.navigateByUrl("/");
   }
 
 }

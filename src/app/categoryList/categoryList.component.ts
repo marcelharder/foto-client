@@ -4,6 +4,7 @@ import { categoryModel } from '../_models/categoryModel';
 import { CategoryDetailsComponent } from '../categoryDetails/categoryDetails.component';
 import { NgFor } from '@angular/common';
 import { AccountService } from '../_services/account.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-categoryList',
@@ -13,12 +14,15 @@ import { AccountService } from '../_services/account.service';
     imports: [CategoryDetailsComponent,NgFor]
 })
 export class CategoryListComponent implements OnInit{
-  accountService = inject(AccountService);
   SeriesArray: Array<categoryModel> | null = [];
+  private route = inject(ActivatedRoute);
 
   ngOnInit(){
-   // get the array from the account service signal
-   this.SeriesArray = this.accountService.CatArray();
+   // get the array from the resolver
+   this.route.data.subscribe({
+    next: data => {this.SeriesArray = data['test']}
+   })
+   
 
 
   }
