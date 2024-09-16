@@ -25,13 +25,13 @@ export class CategoryDetailsComponent {
   ];
   activeSlideIndex = 0; */
 
-  
+
 
   ngOnInit() {
     // get all the slides that come with this category
   }
   goDetails(id: number) {
-    this.router.navigate(['/diaList/'+id]);
+    this.router.navigate(['/diaList/' + id]);
   }
 
 }

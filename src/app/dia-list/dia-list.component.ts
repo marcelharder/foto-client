@@ -11,11 +11,22 @@ import { slideModel } from '../_models/slideModel';
 })
 export class DiaListComponent implements OnInit {
  listOfFotos:slideModel[] = [];
+ eersteFoto = "";
  private route = inject(ActivatedRoute);
+ aantalSlides = 0;
+ item = 1;
   
  ngOnInit(): void {
    this.route.data.subscribe({
-    next: data => {this.listOfFotos = data['lof'].Value}
+    next: data => {
+      this.listOfFotos = data['lof'].Value;
+      this.eersteFoto = this.listOfFotos[0].ImageUrl;
+      this.aantalSlides = this.listOfFotos.length;
+     
+     
+      debugger;
+    
+    }
    })
   }
 
