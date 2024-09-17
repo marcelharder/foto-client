@@ -7,5 +7,5 @@ export const slideListResolver: ResolveFn<slideModel[] | null> = (route, state) 
   const imageService = inject(ImageService);
   const category = route.paramMap.get("cat");
   if(!category) return null;
-  return imageService.getDiasFromCategory(5);
+  return imageService.getDiasFromCategory(+category);
 };
