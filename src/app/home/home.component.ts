@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   testImage = "";
   ngOnInit(): void {
-    this.testImage = "http://localhost:5123/api/Images/getImageFile/" + 5;
+    this.testImage = "http://localhost:5123/api/Images/getImageFile/" + 8;
   }
 
 }
