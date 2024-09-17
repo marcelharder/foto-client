@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { ImageService } from '../_services/image.service';
 
 @Component({
   selector: 'app-About',
@@ -8,10 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./About.component.css']
 })
 export class AboutComponent implements OnInit {
+  
+  private imageSe = inject(ImageService);
+  testImage: any;
 
   constructor() { }
 
   ngOnInit() {
-  }
+     
+      this.testImage = "http://localhost:5123/api/Images/getImageFile/" + 3;
+
+    /*  this.imageSe.getImageFile(5).subscribe((next)=>{
+      debugger;
+      this.testImage = next.url;}) */
+   }
 
 }
