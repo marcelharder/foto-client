@@ -17,7 +17,7 @@ export class AboutComponent implements OnInit {
 
   ngOnInit() {
      
-      this.testImage = "http://localhost:5123/api/Images/getImageFile/" + 3;
+      this.testImage = "http://localhost:5123/api/Images/getImageFile/" + 4;
 
     /*  this.imageSe.getImageFile(5).subscribe((next)=>{
       debugger;
