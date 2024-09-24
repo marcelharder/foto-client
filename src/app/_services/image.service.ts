@@ -16,7 +16,7 @@ export class ImageService {
   getDiasFromCategory(cat: number){
     return this.http.get<slideModel[]>(this.baseUrl + 'Images/getImagesByCategory/' + cat)
   }
-  getCategoryList(){ return this.http.get<categoryModel[]>(this.baseUrl + 'Images/getCategories')}
+ 
 
   //getImageFile(no: number){return this.http.get<any>(this.baseUrl + 'Images/getImageFile/'+ no)}
   //getImageFile(no: number){return this.http.get<any>(this.baseUrl + 'Images/getImageFile/'+ no, {responseType: 'text' as 'json'})}
