@@ -24,6 +24,9 @@ export class CategoryListComponent implements OnInit{
    })
    
 
+   // get the categories from the resolver
+   
+
 
   }
 
